@@ -20,13 +20,13 @@ def dodaj():
 
 @todo.route('/usun/<string:nr>', methods=["GET", "POST"])
 def usun(nr):
-	zadania = wyswietl_dane()
 	baza = sqlite3.connect('baza.db', check_same_thread=False)
 	with baza as connection:
 		c = connection.cursor()
 		polecenie = "DELETE FROM todo WHERE id={}".format(nr)
 		c.execute(polecenie)
 	flash("task deleted.")
+	zadania = wyswietl_dane()
 	return render_template('/main.html', nr=int(nr), zadania=zadania)
 
 
