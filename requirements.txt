@@ -2,3 +2,4 @@ Flask==0.12
 Jinja2==2.9.5
 matplotlib==2.1.0
 requests==2.18.4
+sqlite==3.20.1
