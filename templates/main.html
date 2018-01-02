@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <h4>To do list:</h4>
+
+    <div class="row justify-content-md-center">
+        <div class="col-9">
+
+            <div class="row justify-content-md-center" style="margin-top: 15px; margin-bottom: 0px; margin-left: 0px; width:100%; min-height: 30px">
+                <div class="col-8"><span style="margin: 0px 0px 0px 5px"><b>task title:</b></span></div>
+                <div class="col-3" style="text-align: center;"><b>date:</b></div>
+                <div class="col-1"></div>
+            </div>
+
+            {% for row in zadania %}
+            <div class="alert alert-info alert-dismissible" style="margin: 0px 0px 10px 0px; border: 1px solid #333; padding: 5px 0px 5px 0px; min-height: 40px">
+                <div class="row justify-content-md-center" role="alert" style="margin: 5px 0px 0px 0px; width:100%; min-height: 30px">
+                    <div class="col-8">{{row['title']}}</div>
+                    <!--<div class="col-3">opis: {{row['desc']}}</div>-->
+                    <div class="col-3" style="max-height:20px; text-align: center;">{{row['date']}}</div>
+                    <div class="col-1" style="text-align: right;">
+                        <a href="/usun/{{row['id']}}" style="text-align: right; font-weight: bold; text-decoration: none; color: red">&times;</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+        <div class="col-3" style="text-align: center;">
+            <br><br>
+            <h5 style="text-decoration: underline">Categories:</h5>
+            <button type="button" class="btn btn-danger" style="width: 150px; margin: 8px; border: 1px solid #333;">Important!</button><br>
+            <button type="button" class="btn btn-warning" style="width: 150px; margin: 8px; border: 1px solid #333;">Home</button><br>
+            <button type="button" class="btn btn-info" style="width: 150px; margin: 8px; border: 1px solid #555;">Work</button><br>
+            <button type="button" class="btn btn-success" style="width: 150px; margin: 8px; border: 1px solid #555;">Others</button>
+        </div>
+
+    </div>
+
+{% endblock %}

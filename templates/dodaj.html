@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <h4>Add task:</h4>
+    <br>
+
+    <div class="col-8">
+    <form action="" class="" method="post">
+        <input type="text" class="form-control" placeholder="Task title" name="title" value="{{request.form.title}}"><br>
+        <input type="text" class="form-control" placeholder="Task description" name="desc" value="{{request.form.desc}}"> <br>
+        <input type="date" class="form-control" placeholder="Date" name="date" value="{{request.form.date}}"> <br>
+        <input class="btn btn-success" type="submit" value="Add task">
+    </form>
+    <br><br><br><br>
+    {{error}}
+    </div>
+
+{% endblock %}

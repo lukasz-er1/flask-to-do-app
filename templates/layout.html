@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>To do list</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+	<!--<link href="{{ url_for('static', filename='cover.css') }}" rel="stylesheet">-->
+  </head>
+
+  <body style="background: #348F50;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #56B4D3, #348F50);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #56B4D3, #348F50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ ">
+
+	{% include 'includes/_navbar.html' %}
+
+	<div class="container" style="min-width: 85%;">
+
+	  {% with messages = get_flashed_messages() %}
+		{% if messages %}
+		  {% for message in messages %}
+
+			<div class="alert alert-warning alert-dismissible" role="alert" style="margin-top:10px; max-width: 75%">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			  {{ message }}
+			</div>
+
+		  {% endfor %}
+		{% endif %}
+	  {% endwith %}
+	  <br>
+	  {% block body %}{% endblock %}
+	</div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://getbootstrap.com/assets/js/vendor/popper.min.js"></script>
+	<script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
