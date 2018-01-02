@@ -29,10 +29,10 @@ def pobierz_dane():
 			data = request.form['date']
 			with baza as connection:
 				c = connection.cursor()
-			c.execute('INSERT INTO todo(title, desc, date) VALUES(?, ?, ?)', (tytul, opis, data))
-
 			if tytul == "":
 				flash("Please add title.")
+			else:
+				c.execute('INSERT INTO todo(title, desc, date) VALUES(?, ?, ?)', (tytul, opis, data))
 
 			return render_template('dodaj.html')
 
