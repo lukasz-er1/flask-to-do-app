@@ -7,10 +7,11 @@
 
     <div class="col-8">
     <form action="" class="" method="post">
-        <input type="text" class="form-control" placeholder="Task title" name="title" value="{{request.form.title}}"><br>
-        <input type="text" class="form-control" placeholder="Task description" name="desc" value="{{request.form.desc}}"> <br>
-        <input type="date" class="form-control" placeholder="Date" name="date" value="{{request.form.date}}"> <br>
-        <input class="btn btn-success" type="submit" value="Add task">
+        <input type="text" class="form-control" placeholder="Task title" id="title" name="title" value="{{request.form.title}}"><br>
+        <input type="text" class="form-control" style="height:80px;" placeholder="Task description" id="desc" name="desc" value="{{request.form.desc}}"> <br>
+        <input type="date" class="form-control" style="width:180px;" placeholder="Date" name="date" id="date" value="{{request.form.date}}"> <br>
+        <input class="btn btn-success" type="submit" value="Add task" name="wyslij"><br><br>
+        <input class="btn btn-dark" value="Clear form" onclick="submitFormClear()"><br>
     </form>
     <br><br><br><br>
     {{error}}
